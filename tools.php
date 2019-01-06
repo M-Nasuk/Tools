@@ -10,9 +10,28 @@ if (!isset($_GET['reload'])) {
      echo '<meta http-equiv=Refresh content="0;url=index.php?reload=1">';
 }
 
+/*    SQL Connexion to Database   */
+$channel = new PDO('mysql:dbname=database_name;host=localhost;','user','pw');
+
+$sql_query = $channel->prepare
+(
+  'SELECT * /* INSERT INTO | UPDATE | DELETE */
+  FROM table
+  INNER JOIN table on table.x = table.x
+  WHERE o.orderNumber = ?;
+');
+
+$a = $_POST['x'];
+
+$sql_query->execute([$a]);
+
+$results = $sql_query->fetchAll(PDO::FETCH_ASSOC); // or fetch(PDO::FETCH_ASSOC);
+
+
+/* Function isset alone */
 function is_set($a)
 {
-  if(isset $a){
+  if(isset ($a)){
     return $a;
   } else {
     throw new \Exception("Champ Vide", 1001);
@@ -46,42 +65,5 @@ function displayTable(array $a)
   $line2 .= "</tbody></table>";
 }
 
-/*  SELECT PDO
 
-$query = $ch->prepare
-(
-  'SELECT
-    productLine,
-    textDescription
-  FROM productlines;
-');
-
-$query->execute();
-
-$table = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
-/* INSERT PDO
-
-$pline = "";
-$pdesc = "";
-if(!empty($_POST)) {
-  $choice = $_POST['choice'];
-  $pline = $_POST['pline'];
-  $pdesc = $_POST['pdesc'];
-}
-
-$query_2 = $ch->prepare
-(
-    'INSERT INTO
-      productlines (productLine, textDescription)
-    VALUES (?, ?);
-');
-
-
-if ($pline !== "" && $pdesc !== ""){
-  $query_2->execute([$pline, $pdesc]);
-}
-
-*/
 ?>
