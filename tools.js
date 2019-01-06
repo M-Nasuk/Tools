@@ -79,3 +79,18 @@ function insertHtml(response)
 {
   $(<elt>).<area>(response);
 }
+
+function displayDetails(event)
+{
+  let pAll = document.querySelectorAll('#details p');
+  for (let p of pAll){
+    if (this.dataset.index == p.dataset.index){
+      p.classList.toggle('selected');
+    } else {
+      p.classList.add('selected');
+    }
+  }
+}
+
+$( "body" ).click(function( event ) {
+  console.log(event.target.id )});
