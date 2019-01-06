@@ -5,3 +5,7 @@
 #check_log:checked + #s_log {
   display: block;
 }
+
+input[type='file'] {
+  color: transparent;
+}
