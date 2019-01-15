@@ -24,6 +24,7 @@ function allowNumbersOnly(e) {
     }
 }
 
+//arc(x, y, rayon, angleDépart, angleFin, sensAntiHora
 /* Fonction qui dessine un rectangle et le remplit d'une couleur */
 function drawRectFill(rec, a, b, c, d, e)
 {
