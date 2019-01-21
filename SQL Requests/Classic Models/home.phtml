@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Commandes</title>
+  </head>
+  <body id="orders">
+    <header style="width: 50%; background: #fff; margin: 0 auto; border: 2px solid #000;">
+      <h2 style="display: inline-block">See Log</h2>
+      <input type="checkbox" name="check_log" id="check_log">
+      <section id="s_log">
+        <p style="text-align: center;">Log</p>
+        <p><?= var_dump($_POST);?></p>
+        <p><?= var_dump([PDO::FETCH_ASSOC]);?></p>
+        <p><?= var_dump(PDO::FETCH_ASSOC);?></p>
+        <p><?= var_dump($maq_result_2);?></p>
+      </section>
+    </header>
+    <main>
+      <!--<section id="s_orders">
+          <p>Commandes</p>
+          <?= displayTableOr($order_results);?>
+      </section>-->
+      <section id="form">
+        <h3>Choisissez un modèle et une année</h3>
+        <form class="" action="index.php" method="post">
+          <fieldset>
+            <select class="" name="year">
+              <?php foreach ($maq_result as $key => $value) {
+                      foreach ($value as $k => $val) {
+                        $i = (int)$val;
+                        if ($i != 0 && $i > 999) {
+                          echo "<option value='$i'>$i</option>";
+                        }
+                      }
+                    }
+                  ?>
+            </select>
+            <input type="text" name="choice" value="">
+            <button type="submit" name="button" value="on">Envoyer</button>
+          </fieldset>
+        </form>
+      </section>
+      <section id="s_product">
+        <h3 style="text-align: center;">Display</h3>
+          <?= displayTableUpd($maq_result_2);?>
+      </section>
+
+      <!--<section>
+        <form action="index.php" method="post">
+          <fieldset>
+            <label>New Product</label>
+            <input type="text" name="pline" />
+            <button type="submit" name="button">Envoyer</button>
+          </fieldset>
+        </form>
+      </section>-->
+    </main>
+  </body>
+</html>
