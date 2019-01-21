@@ -78,7 +78,7 @@ function getData(link, func)
 
 function insertHtml(response)
 {
-  $(<elt>).<area>(response);
+  $(<elt>).<function>(response);
 }
 
 function displayDetails(event)
@@ -93,6 +93,7 @@ function displayDetails(event)
   }
 }
 
+/*  Fonction qui renvoie une couleur aleatoire sous format '#AAAAAA'  */
 $( "body" ).click(function( event ) {
   console.log(event.target.id )});
 
