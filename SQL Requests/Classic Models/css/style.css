@@ -1,0 +1,36 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+body {
+  background-color: pink;
+}
+#s_log {
+  display: none;
+}
+
+#check_log:checked + #s_log {
+  display: block;
+}
+
+#s_orders > p {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2em;
+}
+.table {
+  border-collapse: collapse;
+  width: 80%;
+}
+.table td {
+  border: 1px solid #fff;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 90px;
+}
+#displayDetail #form {
+  display: none;
+  border: none;
+}
