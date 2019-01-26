@@ -81,6 +81,7 @@ function insertHtml(response)
   $(<elt>).<function>(response);
 }
 
+/* Fonction n'affiche qu'un seul element d'une liste de plusieurs même element */
 function displayDetails(event)
 {
   let pAll = document.querySelectorAll('#details p');
@@ -105,3 +106,8 @@ function getRandomColor() {
     }
     return color;
 }
+
+/*  Efface le contenu html d'un element après un certain temps */
+window.setTimeout(function () {
+  $('<elt>').html('');;
+}, 3000);
