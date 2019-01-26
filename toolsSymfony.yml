@@ -1,0 +1,20 @@
+# Referencing an entity with a column primary key
+manyToOne:
+    categorie:
+        targetEntity: Category
+        joinColumn:
+          - name: category_id
+            referencedColumnName: id
+            nullable: false
+
+# Referencing an entity with a multiple columns primary key
+manyToOne:
+  location:
+    targetEntity: Location
+    joinColumns:
+      - name: location_latitude
+        referencedColumnName: latitude
+        nullable: false
+      - name: location_longitude
+        referencedColumnName: longitude
+        nullable: false
