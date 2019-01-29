@@ -111,3 +111,6 @@ function getRandomColor() {
 window.setTimeout(function () {
   $('<elt>').html('');;
 }, 3000);
+
+/*  Renvoie vers une page après un certain temps */
+setTimeout(function() { window.location = "index.php"; }, 3000);
