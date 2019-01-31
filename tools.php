@@ -65,5 +65,14 @@ function displayTable(array $a)
   $line2 .= "</tbody></table>";
 }
 
+/*  Function __autoload to be able to use namespace for classes */
+function __autoload($classe)
+{
+  $segments = explode('\\', $classe);
+  $path = "src/".implode('/', $segments).".php";
+
+  include $path;
+}
+
 
 ?>
