@@ -78,3 +78,6 @@ function __autoload($classe)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+/* var dump pre tag */
+echo '<pre>' . var_export($data, true) . '</pre>';
