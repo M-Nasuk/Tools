@@ -1,5 +1,6 @@
 <?php
 
+// Tester les tableaux $_GET, POST, etc...
 /*    isset $_POST['(input name="")']   */
 if (isset($_POST['name'])) {
   $a = $_POST['name'];
