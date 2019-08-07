@@ -74,6 +74,23 @@ function __autoload($classe)
 
   include $path;
 }
+
+/* Own Autoloader Class Function const */
+final class Autoloader
+{
+    public static function loadClass()
+    {
+        spl_autoload_register(function ($class) {
+            include ROOT_PATH.'/src/'.str_replace('\\', '/', $class).'.php';
+        });
+    }
+}
+
+include_once 'path/to/Autoloader.php';
+const ROOT_PATH = __DIR__; // index root project
+Autoloader::loadClass();
+
+
 /* Show errors in browser */
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -81,3 +98,5 @@ error_reporting(E_ALL);
 
 /* var dump pre tag */
 echo '<pre>' . var_export($data, true) . '</pre>';
+
+
