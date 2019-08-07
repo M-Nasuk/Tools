@@ -78,10 +78,12 @@ function __autoload($classe)
 /* Own Autoloader Class Function const */
 final class Autoloader
 {
+    const SOURCE_DIR = "/src";
+
     public static function loadClass()
     {
         spl_autoload_register(function ($class) {
-            include ROOT_PATH.'/src/'.str_replace('\\', '/', $class).'.php';
+            include ROOT_PATH.self::SOURCE_DIR.'/'.str_replace('\\', '/', $class).'.php';
         });
     }
 }
